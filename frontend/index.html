@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>简易用户文件系统 Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f5f5f5; }
+    .op-btn { margin-right: 8px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h2>简易用户文件系统 Demo</h2>
+  <div id="login-area">
+    <input id="username" placeholder="用户名" />
+    <input id="password" type="password" placeholder="密码" />
+    <button onclick="login()">登录</button>
+    <span id="login-msg" style="color:red"></span>
+  </div>
+  <div id="main-area" class="hidden">
+    <div>
+      <button onclick="refreshList()">刷新</button>
+      <input type="file" id="upload-file" onchange="uploadFile()" />
+      <button onclick="createFolder()">新建文件夹</button>
+      <button onclick="createUser()">新增用户</button>
+      <span id="current-path"></span>
+      <button onclick="logout()">退出</button>
+    </div>
+    <table id="file-table">
+      <thead>
+        <tr><th>名称</th><th>类型</th><th>操作</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
